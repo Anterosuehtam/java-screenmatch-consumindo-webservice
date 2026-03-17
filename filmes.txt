@@ -1,1 +1,0 @@
-nome = Transformers, anoDeLancamento = 2007, Duração = 144, Classificação = 7.1
