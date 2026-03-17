@@ -1,4 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public record TituloOmdb(String title, String year, String runtime) {
+import com.google.gson.annotations.SerializedName;
+
+public record TituloOmdb(String title, String year, String runtime, @SerializedName("imdbRating") String imdbRating) {
 }

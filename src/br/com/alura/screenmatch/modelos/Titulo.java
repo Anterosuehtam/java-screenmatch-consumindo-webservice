@@ -23,7 +23,8 @@ public class Titulo implements Comparable<Titulo> {
             throw new ErroDeConversaoDeAnoException("\nNão foi possível converter o ano de lançamento pois tem mais de 04 Caracteres!");
         }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().replace(" min", ""));
+        this.somaDasAvaliacoes = Double.valueOf(meuTituloOmdb.imdbRating());
     }
 
     public String getNome() {
@@ -85,6 +86,6 @@ public class Titulo implements Comparable<Titulo> {
     public String toString() {
         return "nome = " + nome +
                 ", anoDeLancamento = " + anoDeLancamento +
-                ", Duração = " + duracaoEmMinutos;
+                ", Duração = " + duracaoEmMinutos + ", Classificação = " + somaDasAvaliacoes;
     }
 }
